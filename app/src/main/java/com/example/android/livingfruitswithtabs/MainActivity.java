@@ -15,6 +15,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.RadioButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -142,10 +144,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
+    //-------------------------------------------
+    //  Get Tab Specific Fragments
+    //===========================================
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
@@ -154,9 +155,12 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            switch (position) {
+                case 0:
+                    return OrderScreenFragment.newInstance();
+                default:
+                    return PlaceholderFragment.newInstance(position + 1);
+            }
         }
 
         @Override
@@ -179,6 +183,27 @@ public class MainActivity extends AppCompatActivity {
                     return "Contact";
             }
             return null;
+        }
+    }
+
+    //-------------------------------------------
+    //  Delivery Radio Button
+    //===========================================
+    public void onRadioButtonClicked(View view) {
+        // Is the button checked now?
+        boolean checked = ((RadioButton) view).isChecked();
+        ImageButton deliveryIcon = (ImageButton) findViewById(R.id.deliveryIcon);
+
+        switch (view.getId()) {
+            case R.id.deliveryButton:
+                if (checked)
+                    deliveryIcon.setImageResource(R.drawable.delivery);
+                break;
+
+            case R.id.pickupButton:
+                if (checked)
+                    deliveryIcon.setImageResource(R.drawable.pickup);
+                break;
         }
     }
 }
