@@ -15,7 +15,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.RadioButton;
 
 public class MainActivity extends AppCompatActivity {
@@ -192,18 +191,17 @@ public class MainActivity extends AppCompatActivity {
     public void onRadioButtonClicked(View view) {
         // Is the button checked now?
         boolean checked = ((RadioButton) view).isChecked();
-        ImageButton deliveryIcon = (ImageButton) findViewById(R.id.deliveryIcon);
 
-        switch (view.getId()) {
-            case R.id.deliveryButton:
-                if (checked)
-                    deliveryIcon.setImageResource(R.drawable.delivery);
-                break;
-
-            case R.id.pickupButton:
-                if (checked)
-                    deliveryIcon.setImageResource(R.drawable.pickup);
-                break;
-        }
+//        switch (view.getId()) {
+//            case R.id.deliveryButton:
+//                if (checked)
+//                    deliveryIcon.setImageResource(R.drawable.delivery);
+//                break;
+//
+//            case R.id.pickupButton:
+//                if (checked)
+//                    deliveryIcon.setImageResource(R.drawable.pickup);
+//                break;
+//        }
     }
 }

@@ -4,13 +4,21 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
+    <dimen name="cover_photo_size">160dp</dimen>
 
-    // Price
-    <dimen name="Price_Text_Size">20sp</dimen>
-    <dimen name="Price_Number_Size">30sp</dimen>
+    // Order Activity
 
-    // Image Sizes
-    <dimen name="imageHeight">150dp</dimen>
-    <dimen name="imageWidth">150dp</dimen>
-    <dimen name="Image_Margin">8dp</dimen>
+        // Text
+        <dimen name="size_quant_text_size">14sp</dimen>
+        <dimen name="subtotal_size">14sp</dimen>
+        <dimen name="edit_text_height">20dp</dimen>
+        <dimen name="edit_text_width">20dp</dimen>
+        <dimen name="radio_button_font_size">14sp</dimen>
+
+        // Icons
+        <dimen name="container_icon_height">100dp</dimen>
+        <dimen name="container_icon_width">100dp</dimen>
+
+
+    //
 </resources>

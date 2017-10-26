@@ -20,5 +20,20 @@
     <string name="sue_and_maurray">Sue &amp; Maurray Nash</string>
     <string name="address"> 71E Keri Downs Road /n Kerikeri /n Northland 0294</string>
 
+    // Order
+        // Cover Photo
+        <string name="order_cover_1">Farm-direct, spray free</string>
+        <string name="blueberries">blueberries</string>
+
+        // Sign In
+        <string name="sign_in">
+            <font color='#982451'>Sign in </font>
+            <font color='#000000'>for easier ordering,\n or continue below.</font>
+          </string>
+
+    <string name="sign_in2"> Sign in for easier ordering, &#xA;or continue below.</string>
+
 
 </resources>
+
+

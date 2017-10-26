@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,6 +8,12 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.android.livingfruitswithtabs.MainActivity"
     android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
 
     <ImageView
         android:id="@+id/aboutUsMainImage"
@@ -19,6 +25,10 @@
         android:id="@+id/aboutUsMainText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/About_Us_main"/>
+        android:text="@string/About_Us_main"
+        android:textSize="35sp"
+        android:typeface="sans"/>
 
-</LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -2,6 +2,8 @@ package com.example.android.livingfruitswithtabs;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.SpannableString;
+import android.text.style.RelativeSizeSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +30,8 @@ public class OrderScreenFragment extends android.support.v4.app.Fragment {
 
     boolean delivery = true;
     ImageView deliveryIcon;
-    RadioButton deliveryButton;
+    RadioButton freeDeliveryButton;
+    RadioButton standardDeliveryButton;
     RadioButton pickupButton;
 
     //-------------------------------------------
@@ -57,15 +60,27 @@ public class OrderScreenFragment extends android.support.v4.app.Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // Declare Variables:
-        final EditText text125 = (EditText) view.findViewById(R.id.count_125);
-        final EditText text400 = (EditText) view.findViewById(R.id.count_400);
-        final EditText text600 = (EditText) view.findViewById(R.id.count_600);
-        deliveryIcon = (ImageView) view.findViewById(R.id.deliveryIcon);
-        deliveryButton = (RadioButton) view.findViewById(R.id.deliveryButton);
-        pickupButton = (RadioButton) view.findViewById(R.id.pickupButton);
+        TextView signInText = (TextView) view.findViewById(R.id.sign_in_text);
+        TextView coverText = (TextView) view.findViewById(R.id.order_cover_text);
+        final EditText text125 = (EditText) view.findViewById(R.id.editText_125);
+        final EditText text400 = (EditText) view.findViewById(R.id.edit_text_400);
+        final EditText text600 = (EditText) view.findViewById(R.id.edit_text_600);
+        freeDeliveryButton = (RadioButton) view.findViewById(R.id.free_delivery_radio);
+        standardDeliveryButton = (RadioButton) view.findViewById(R.id.standard_delivery_radio);
+        pickupButton = (RadioButton) view.findViewById(R.id.pickup_radio_button);
+
+        // Set sign in text
+        signInText.setText(R.string.sign_in);
+
+        // Set Cover photo text
+        String spanCoverText = "Farm-direct, spray-free \nblueberries";
+        SpannableString mySpanable = new SpannableString(spanCoverText);
+        mySpanable.setSpan(new RelativeSizeSpan(2f), 24,36, 0);
+        coverText.setText(mySpanable);
+
 
         // 125 grams -- $ 4.00
-        final View button_1 = view.findViewById(R.id.blueberry_125);
+        final View button_1 = view.findViewById(R.id.icon_125);
         button_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,7 +93,7 @@ public class OrderScreenFragment extends android.support.v4.app.Fragment {
         });
 
         // 400 grams -- $12.00
-        final View button_2 = view.findViewById(R.id.blueberry_400);
+        final View button_2 = view.findViewById(R.id.icon_400);
         button_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,7 +106,7 @@ public class OrderScreenFragment extends android.support.v4.app.Fragment {
         });
 
         // 600 grams -- $16.00
-        final View button_3 = view.findViewById(R.id.blueberry_600);
+        final View button_3 = view.findViewById(R.id.icon_600);
         button_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,35 +118,6 @@ public class OrderScreenFragment extends android.support.v4.app.Fragment {
             }
         });
 
-        // Clear
-        final View clear_button = view.findViewById(R.id.clear_button);
-        clear_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Clear Prices
-                price = 0.00;
-                updatePrice();
-
-                // Clear Counts
-                count125 = 0;
-                count400 = 0;
-                count600 = 0;
-                updateCount(count125, text125);
-                updateCount(count400, text400);
-                updateCount(count600, text600);
-            }
-        });
-
-        final ImageView deliveryIcon = (ImageView) view.findViewById(R.id.deliveryIcon);
-        deliveryIcon.setScaleType(ImageView.ScaleType.FIT_CENTER);
-
-        // Delivery
-        deliveryIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Toggle Delivery
-            }
-        });
     }
 
 
@@ -144,7 +130,7 @@ public class OrderScreenFragment extends android.support.v4.app.Fragment {
     //  Update Price
     //===========================================
     public void updatePrice(){
-        TextView price_Number = (TextView) getView().findViewById(R.id.price_number);
+        TextView price_Number = (TextView) getView().findViewById(R.id.subtotal_price);
         String price_string = String.format(Locale.ENGLISH, "$ %.2f", price);
         price_Number.setText(price_string);
     }
