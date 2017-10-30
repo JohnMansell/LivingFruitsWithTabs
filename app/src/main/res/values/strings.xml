@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LivingFruitsWithTabs</string>
+    <string name="app_name">Living Fruits Blueberries</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
 
@@ -8,17 +8,39 @@
     <string name="repeat_button">Repeat Last Order</string>
     <string name="Delivery">Delivery</string>
     <string name="Pick_Up">Pick Up</string>
+    <string name="Continue_button">Continue to\nPayment and Shipping</string>
 
     // About Us
-    <string name="About_Us_main">Living Fruits is a hands-on, family owned and run orchard/business.
-        Sue and Murray run the farm and their daughter, Amy, helps out, having recently moved back to Kerikeri with her husband and three children.
+    <string name="aboutUsCoverText">About\nLiving Fruits\nBlueberries</string>
+    <string name="about_us_title_1">Blueberries like no other</string>
+    <string name="about_us_body_1">
+        Our tasty, nutritious blueberries are spray free, hand picked and packed on site. Our regular customers love the flavour and sweetness of our blueberries ... and keep coming back for more.Available November to March\n\n
+        We follow recognised quality processes in bringing the freshest and best quality fruit to you (NZGAP accredited).\n\n
+    </string>
+    <string name="about_us_title_2">Our story</string>
+    <string name="about_us_body_2">
+        Living Fruits is a hands-on, family owned and run orchard/business.Sue and Murray run the
+        farm and their daughter, Amy, helps out, having recently moved back to Kerikeri with her husband
+        and three children.
+        \n\n
         In 2002, we bought our 4.6 Ha block 10 minutes north of Kerikeri and planted our blueberries.
-        We love the lifestyle, growing healthy fruit and veg, and its a great place for our children and grandchildren to come home to.</string>
-    <string name="title_activity_about_us">AboutUs</string>
+        \n\n
+        We love the lifestyle, growing healthy fruits and vegetables, and it's a great place for our
+        children and grandchildren to come home to.
+        \n\n
+    </string>
 
     // Contact
     <string name="sue_and_maurray">Sue &amp; Maurray Nash</string>
-    <string name="address"> 71E Keri Downs Road /n Kerikeri /n Northland 0294</string>
+    <string name="address"> 71E Keri Downs Road \n Kerikeri \n Northland 0294</string>
+    <string name="contact_title">We\'d love to hear from you. \nDrop us a line at:</string>
+    <string name="contactNames">Sue &#038; Murray Nash</string>
+    <string name="phoneLandline">09&#8211;407&#8211;6880</string>
+    <string name="phoneMobile">021&#8211;171&#8211;6061</string>
+    <string name="emailLink">info@livingFruits.co.nz</string>
+    <string name="livingFruitsAddress">71E Keri Downs Road \nKeriKeri \nNorthland 0294</string>
+    <string name="OpenGoogleMaps">Open Google Maps</string>
+
 
     // Order
         // Cover Photo

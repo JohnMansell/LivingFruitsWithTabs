@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/LivingFruitsWithTabs.iml" filepath="$PROJECT_DIR$/LivingFruitsWithTabs.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\Documents\StudioProjects\LivingFruitsWithTabs\app\app.iml" filepath="D:\Documents\StudioProjects\LivingFruitsWithTabs\app\app.iml" />
     </modules>
   </component>
 </project>

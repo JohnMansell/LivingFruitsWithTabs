@@ -80,7 +80,7 @@ public class OrderScreenFragment extends android.support.v4.app.Fragment {
 
 
         // 125 grams -- $ 4.00
-        final View button_1 = view.findViewById(R.id.icon_125);
+        final View button_1 = view.findViewById(R.id.icon125);
         button_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

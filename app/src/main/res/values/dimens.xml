@@ -4,7 +4,10 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
-    <dimen name="cover_photo_size">160dp</dimen>
+
+    // Cover Photos
+    <dimen name="cover_photo_size">250dp</dimen>
+    <dimen name="cover_font_size">24sp</dimen>
 
     // Order Activity
 
@@ -15,9 +18,18 @@
         <dimen name="edit_text_width">20dp</dimen>
         <dimen name="radio_button_font_size">14sp</dimen>
 
+    <dimen name="aboutUsTextSize">16sp</dimen>
+
         // Icons
         <dimen name="container_icon_height">100dp</dimen>
         <dimen name="container_icon_width">100dp</dimen>
+
+
+    <dimen name="phoneIcon">30dp</dimen>
+    <dimen name="contactScreenTextSize">18sp</dimen>
+    <dimen name="buttonElevation">10dp</dimen>
+    <dimen name="homeButtonWidth">165dp</dimen>
+    <dimen name="welcomTextBottomPadding">80dp</dimen>
 
 
     //

@@ -5,30 +5,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.android.livingfruitswithtabs.MainActivity"
-    android:orientation="vertical">
+    tools:context="com.example.android.livingfruitswithtabs.MainActivity">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-
-    <ImageView
-        android:id="@+id/aboutUsMainImage"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:srcCompat="@drawable/our_story_main" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/aboutUsMainText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/About_Us_main"
-        android:textSize="35sp"
-        android:typeface="sans"/>
+        <TextView
+            android:id="@+id/aboutUsCover"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cover_photo_size"
+            android:background="@drawable/about_us_cover"
+            android:gravity="center"
+            android:text="@string/aboutUsCoverText"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="40dp" />
+
+        <TextView
+            android:id="@+id/aboutUsTitle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/about_us_title_1"
+            android:textSize="@dimen/aboutUsTextSize"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/aboutUsCover" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:maxLines="100"
+            android:scrollHorizontally="false"
+            android:text="@string/about_us_body_1"
+            android:textSize="@dimen/aboutUsTextSize"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/aboutUsTitle1" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_us_title_2"
+            android:textSize="@dimen/aboutUsTextSize"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:text="@string/about_us_body_2"
+            android:textSize="@dimen/aboutUsTextSize"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="40dp" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="89dp"
+            android:layout_height="106dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/textView15"
+            tools:text="spaceText" />
+    </android.support.constraint.ConstraintLayout>
 
 </ScrollView>
