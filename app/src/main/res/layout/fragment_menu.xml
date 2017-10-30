@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/opening_background_small">
 
     <Button
         android:id="@+id/homeButton2"
         android:layout_width="@dimen/homeButtonWidth"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/homeButtonHeight"
         android:layout_marginTop="12dp"
         android:alpha="0.80"
         android:background="@drawable/my_button"
@@ -24,23 +25,23 @@
     <Button
         android:id="@+id/homeButton1"
         android:layout_width="@dimen/homeButtonWidth"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/homeButtonHeight"
+        android:layout_marginTop="24dp"
         android:alpha="0.80"
         android:background="@drawable/my_button"
-        android:capitalize="words"
         android:text="Place an Order"
         android:textColor="@color/colorWhite"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
-        tools:layout_editor_absoluteY="206dp" />
+        app:layout_constraintTop_toTopOf="@+id/guideline10" />
 
     <Button
         android:id="@+id/homeButton4"
         android:layout_width="@dimen/homeButtonWidth"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/homeButtonHeight"
         android:layout_marginTop="20dp"
         android:alpha="0.80"
         android:background="@drawable/my_button"
@@ -56,21 +57,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.50121653" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="304dp" />
+        app:layout_constraintGuide_begin="82dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="80dp" />
+        app:layout_constraintGuide_end="81dp" />
 
     <TextView
         android:id="@+id/textView9"
@@ -85,43 +86,40 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        android:translationZ="-5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/opening_background" />
-
-    <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/whiteSquare"
         android:layout_width="223dp"
-        android:layout_height="163dp"
+        android:layout_height="0dp"
         android:alpha="0.6"
         android:scaleType="centerCrop"
         android:translationZ="-4dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline10"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toBottomOf="@+id/guideline6"
+        app:layout_constraintVertical_bias="0.75"
         app:srcCompat="@drawable/rounded_white_square" />
 
     <ImageView
         android:id="@+id/imageView10"
         android:layout_width="248dp"
-        android:layout_height="181dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="187dp"
         android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/guideline10"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
-        app:layout_constraintTop_toTopOf="@+id/imageView9"
         app:srcCompat="@drawable/living_fruits_logo" />
 
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="205dp" />
 
 </android.support.constraint.ConstraintLayout>

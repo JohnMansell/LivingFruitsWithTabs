@@ -43,17 +43,21 @@
 
 
     // Order
-        // Cover Photo
-        <string name="order_cover_1">Farm-direct, spray free</string>
-        <string name="blueberries">blueberries</string>
+    // Cover Photo
+    <string name="order_cover_1">Farm-direct, spray free</string>
+    <string name="blueberries">blueberries</string>
 
-        // Sign In
-        <string name="sign_in">
+    // Sign In
+    <string name="sign_in">
             <font color='#982451'>Sign in </font>
             <font color='#000000'>for easier ordering,\n or continue below.</font>
           </string>
 
     <string name="sign_in2"> Sign in for easier ordering, &#xA;or continue below.</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 
 
 </resources>

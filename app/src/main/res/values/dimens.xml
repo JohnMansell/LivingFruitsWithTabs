@@ -30,6 +30,7 @@
     <dimen name="buttonElevation">10dp</dimen>
     <dimen name="homeButtonWidth">165dp</dimen>
     <dimen name="welcomTextBottomPadding">80dp</dimen>
+    <dimen name="homeButtonHeight">35dp</dimen>
 
 
     //

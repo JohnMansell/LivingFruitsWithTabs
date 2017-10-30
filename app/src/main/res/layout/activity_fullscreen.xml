@@ -1,0 +1,244 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    tools:context="com.example.android.livingfruitswithtabs.FullscreenActivity"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--
+        //ToDo: get this to be replaced by full screen menu
+    The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fullscreen_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/opening_background_small"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            android:translationZ="-5dp" />
+
+        <Button
+            android:id="@+id/homeButton2"
+            android:layout_width="@dimen/homeButtonWidth"
+            android:layout_height="@dimen/homeButtonHeight"
+            android:layout_marginTop="12dp"
+            android:alpha="0.80"
+            android:background="@drawable/my_button"
+            android:text="About"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toBottomOf="@+id/homeButton1" />
+
+        <Button
+            android:id="@+id/homeButton1"
+            android:layout_width="@dimen/homeButtonWidth"
+            android:layout_height="@dimen/homeButtonHeight"
+            android:layout_marginTop="24dp"
+            android:alpha="0.80"
+            android:background="@drawable/my_button"
+            android:text="Place an Order"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toTopOf="@+id/guideline10" />
+
+        <Button
+            android:id="@+id/homeButton4"
+            android:layout_width="@dimen/homeButtonWidth"
+            android:layout_height="@dimen/homeButtonHeight"
+            android:layout_marginTop="20dp"
+            android:alpha="0.80"
+            android:background="@drawable/my_button"
+            android:text="Contact"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toBottomOf="@+id/homeButton2" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.50121653" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="82dp" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="81dp" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Welcome To"
+            android:textColor="@color/Burgundy"
+            android:textSize="@dimen/cover_font_size"
+            app:layout_constraintEnd_toStartOf="@+id/guideline8"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/whiteSquare"
+            android:layout_width="223dp"
+            android:layout_height="0dp"
+            android:alpha="0.6"
+            android:scaleType="centerCrop"
+            android:translationZ="-4dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline10"
+            app:layout_constraintEnd_toStartOf="@+id/guideline8"
+            app:layout_constraintHorizontal_bias="0.461"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/guideline6"
+            app:layout_constraintVertical_bias="0.75"
+            app:srcCompat="@drawable/rounded_white_square" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="248dp"
+            android:layout_height="187dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/guideline10"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline6"
+            app:srcCompat="@drawable/living_fruits_logo" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="205dp" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+        <!-- This FrameLayout insets its children based on system windows using
+             android:fitsSystemWindows. -->
+    <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:id="@+id/fullscreen_content_controls"
+        style="?metaButtonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="@color/black_overlay"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent">
+
+        <Button
+            android:id="@+id/dummy_button"
+            style="?metaButtonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/dummy_button" />
+
+    </LinearLayout>
+
+    </FrameLayout>
+</FrameLayout>
+
+
+
+
+<!-- ==========================================
+            Original Content
+============================================= -->
+
+
+<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="#0099cc"-->
+    <!--tools:context="com.example.android.livingfruitswithtabs.FullscreenActivity">-->
+
+  <!--&lt;!&ndash;-->
+        <!--//ToDo: get this to be replaced by full screen menu-->
+    <!--The primary full-screen view. This can be replaced with whatever view-->
+         <!--is needed to present your content, e.g. VideoView, SurfaceView,-->
+         <!--TextureView, etc. &ndash;&gt;-->
+
+
+<!--<TextView-->
+<!--android:id="@+id/fullscreen_content"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--android:gravity="center"-->
+<!--android:keepScreenOn="true"-->
+<!--android:text="@string/dummy_content"-->
+<!--android:textColor="#33b5e5"-->
+<!--android:textSize="50sp"-->
+<!--android:textStyle="bold" />-->
+
+
+
+    <!--&lt;!&ndash; This FrameLayout insets its children based on system windows using-->
+         <!--android:fitsSystemWindows. &ndash;&gt;-->
+<!--<FrameLayout-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--android:fitsSystemWindows="true">-->
+<!--<LinearLayout-->
+    <!--android:id="@+id/fullscreen_content_controls"-->
+    <!--style="?metaButtonBarStyle"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="bottom|center_horizontal"-->
+    <!--android:background="@color/black_overlay"-->
+    <!--android:orientation="horizontal"-->
+    <!--tools:ignore="UselessParent">-->
+
+    <!--<Button-->
+        <!--android:id="@+id/dummy_button"-->
+        <!--style="?metaButtonBarButtonStyle"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:text="@string/dummy_button" />-->
+
+<!--</LinearLayout>-->
+
+
+<!--</FrameLayout>-->
+
+    <!--</FrameLayout>-->

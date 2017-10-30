@@ -7,4 +7,6 @@
     // Custom Colors
     <color name="colorWhite">#ffffff</color>
     <color name="Burgundy">#982451</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>
