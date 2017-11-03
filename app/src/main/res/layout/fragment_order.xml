@@ -14,22 +14,19 @@
         android:layout_height="wrap_content"
         android:clipToPadding="false"
         android:elevation="@dimen/buttonElevation"
-        android:padding="8dp">
+        android:background="@color/colorWhite">
 
 
         <TextView
             android:id="@+id/order_cover_text"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="@dimen/cover_photo_size"
-            android:layout_marginTop="-19dp"
             android:background="@drawable/order_cover"
             android:gravity="center"
             android:text="@string/order_cover_1"
             android:textColor="@color/colorWhite"
             android:textSize="20sp"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_constraintLeft_creator="1"
             tools:layout_constraintRight_creator="1"
@@ -257,7 +254,7 @@
         <RadioGroup
             android:id="@+id/radioGroup"
             android:layout_width="265dp"
-            android:layout_height="98dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:gravity="left"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -271,7 +268,7 @@
                 style="@android:style/Widget.CompoundButton.CheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="FREE pickup at our packhouse"
+                android:text="FREE -- Pickup at our packhouse"
                 android:textSize="@dimen/radio_button_font_size" />
 
             <RadioButton
@@ -279,7 +276,7 @@
                 style="@android:style/Widget.CompoundButton.CheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="FREE delivery to Kerikeri CBD"
+                android:text="FREE -- delivery to Kerikeri CBD"
                 android:textSize="@dimen/radio_button_font_size" />
 
             <RadioButton
@@ -289,6 +286,7 @@
                 android:layout_height="wrap_content"
                 android:text="Standard delivery, calculate below"
                 android:textSize="@dimen/radio_button_font_size" />
+
         </RadioGroup>
 
         <TextView

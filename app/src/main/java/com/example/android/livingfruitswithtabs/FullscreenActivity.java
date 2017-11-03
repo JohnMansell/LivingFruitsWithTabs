@@ -1,19 +1,29 @@
 package com.example.android.livingfruitswithtabs;
 
 import android.annotation.SuppressLint;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.Button;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class FullscreenActivity extends AppCompatActivity {
+public class FullscreenActivity extends AppCompatActivity implements View.OnClickListener {
+
+    //-------------------------------
+    // Declare Variables
+    //-------------------------------
+    Button homeButton_order;
+    Button homeButton_contact;
+    Button homeButton_about;
+
+    Intent myIntent;
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -84,10 +94,12 @@ public class FullscreenActivity extends AppCompatActivity {
         }
     };
 
+    //===============================
+    // On Create
+    //===============================
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_fullscreen);
 
         mVisible = true;
@@ -106,59 +118,127 @@ public class FullscreenActivity extends AppCompatActivity {
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
-        findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+            findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+
+        //-------------------------------
+        // Establish Buttons
+        //-------------------------------
+            homeButton_about = (Button)findViewById(R.id.homeButton_about);
+            homeButton_order = (Button)findViewById(R.id.homeButton_order);
+            homeButton_contact = (Button)findViewById(R.id.homeButton_contact);
+
+        //-------------------------------
+        // Set On Click Listeners
+        //-------------------------------
+            homeButton_contact.setOnClickListener(this);
+            homeButton_order.setOnClickListener(this);
+            homeButton_about.setOnClickListener(this);
+
+        //-------------------------------
+        // Create Intent
+        //-------------------------------
+            myIntent = new Intent(FullscreenActivity.this, MainActivity.class);
     }
 
+    //-------------------------------
+    // On Post Create
+    //-------------------------------
+        @Override
+        protected void onPostCreate(Bundle savedInstanceState) {
+            super.onPostCreate(savedInstanceState);
+
+            // Trigger the initial hide() shortly after the activity has been
+            // created, to briefly hint to the user that UI controls
+            // are available.
+            delayedHide(50);
+        }
+
+    //-------------------------------
+    // Toggle
+    //-------------------------------
+        private void toggle() {
+            if (mVisible) {
+                hide();
+            } else {
+                show();
+            }
+        }
+
+    //-------------------------------
+    // Hide
+    //-------------------------------
+        private void hide() {
+            // Hide UI first
+            ActionBar actionBar = getSupportActionBar();
+            if (actionBar != null) {
+                actionBar.hide();
+            }
+            mControlsView.setVisibility(View.GONE);
+            mVisible = false;
+
+            // Schedule a runnable to remove the status and navigation bar after a delay
+            mHideHandler.removeCallbacks(mShowPart2Runnable);
+            mHideHandler.postDelayed(mHidePart2Runnable, UI_ANIMATION_DELAY);
+        }
+
+    //-------------------------------
+    // Show
+    //-------------------------------
+        @SuppressLint("InlinedApi")
+        private void show() {
+            // Show the system bar
+            mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+            mVisible = true;
+
+            // Schedule a runnable to display UI elements after a delay
+            mHideHandler.removeCallbacks(mHidePart2Runnable);
+            mHideHandler.postDelayed(mShowPart2Runnable, UI_ANIMATION_DELAY);
+        }
+
+    //-------------------------------
+    // Delay Hide
+    //-------------------------------
+        /**
+         * Schedules a call to hide() in delay milliseconds, canceling any
+         * previously scheduled calls.
+         */
+        private void delayedHide(int delayMillis) {
+            mHideHandler.removeCallbacks(mHideRunnable);
+            mHideHandler.postDelayed(mHideRunnable, delayMillis);
+        }
+
+    //-------------------------------
+    // On Click
+    //-------------------------------
+        /**
+         * Takes in the button Clicked
+         * Sends an intent to start the main activity at page 'page'
+         * @param view = button clicked
+         */
     @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
+        public void onClick(View view) {
+            int page = 1;
 
-        // Trigger the initial hide() shortly after the activity has been
-        // created, to briefly hint to the user that UI controls
-        // are available.
-        delayedHide(100);
-    }
+            switch (view.getId()) {
 
-    private void toggle() {
-        if (mVisible) {
-            hide();
-        } else {
-            show();
+                case R.id.homeButton_order:
+                    page = 0;
+                    break;
+
+                case R.id.homeButton_about:
+                    page = 1;
+                    break;
+
+                case R.id.homeButton_contact:
+                    page = 2;
+                    break;
+
+                default:
+                    break;
+            }
+
+            myIntent.putExtra("Page", page);
+            startActivity(myIntent);
         }
-    }
-
-    private void hide() {
-        // Hide UI first
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.hide();
-        }
-        mControlsView.setVisibility(View.GONE);
-        mVisible = false;
-
-        // Schedule a runnable to remove the status and navigation bar after a delay
-        mHideHandler.removeCallbacks(mShowPart2Runnable);
-        mHideHandler.postDelayed(mHidePart2Runnable, UI_ANIMATION_DELAY);
-    }
-
-    @SuppressLint("InlinedApi")
-    private void show() {
-        // Show the system bar
-        mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
-        mVisible = true;
-
-        // Schedule a runnable to display UI elements after a delay
-        mHideHandler.removeCallbacks(mHidePart2Runnable);
-        mHideHandler.postDelayed(mShowPart2Runnable, UI_ANIMATION_DELAY);
-    }
-
-    /**
-     * Schedules a call to hide() in delay milliseconds, canceling any
-     * previously scheduled calls.
-     */
-    private void delayedHide(int delayMillis) {
-        mHideHandler.removeCallbacks(mHideRunnable);
-        mHideHandler.postDelayed(mHideRunnable, delayMillis);
-    }
 }

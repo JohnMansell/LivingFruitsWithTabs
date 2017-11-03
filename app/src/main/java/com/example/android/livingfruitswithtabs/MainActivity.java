@@ -1,8 +1,6 @@
 package com.example.android.livingfruitswithtabs;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -35,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager mViewPager;
 
     //-------------------------------------------
+    //  Declare Variables
+    //===========================================
+
+
+    //-------------------------------------------
     //  On Create
     //===========================================
     @Override
@@ -54,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
+        //-----------------------------------
+        //  Set Current page
+        //-----------------------------------
+        int defaultValue = 0;
+        int page = getIntent().getIntExtra("Page", defaultValue);
+        mViewPager.setCurrentItem(page);
     }
 
     //-------------------------------------------
@@ -109,6 +119,9 @@ public class MainActivity extends AppCompatActivity {
             return fragment;
         }
 
+        //-------------------------------------------
+        //  On Create View
+        //===========================================
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
@@ -182,16 +195,18 @@ public class MainActivity extends AppCompatActivity {
         // Is the button checked now?
         boolean checked = ((RadioButton) view).isChecked();
 
-//        switch (view.getId()) {
-//            case R.id.deliveryButton:
-//                if (checked)
-//                    deliveryIcon.setImageResource(R.drawable.delivery);
-//                break;
-//
-//            case R.id.pickupButton:
-//                if (checked)
-//                    deliveryIcon.setImageResource(R.drawable.pickup);
-//                break;
-//        }
+        switch (view.getId()) {
+            case R.id.pickup_radio_button:
+                if (checked)
+                break;
+
+            case R.id.free_delivery_radio:
+                if (checked)
+                break;
+
+            case R.id.standard_delivery_radio:
+                if (checked)
+                break;
+        }
     }
 }
