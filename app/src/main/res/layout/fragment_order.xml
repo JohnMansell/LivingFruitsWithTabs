@@ -367,7 +367,7 @@
             android:layout_margin="25dp"
             android:background="@drawable/my_button"
             android:padding="25dp"
-            android:text="@string/Continue_button"
+            android:text="Order"
             android:textColor="@android:color/white"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintHorizontal_bias="0.52"

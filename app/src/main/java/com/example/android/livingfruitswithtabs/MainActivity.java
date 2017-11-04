@@ -13,9 +13,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RadioButton;
 
 public class MainActivity extends AppCompatActivity {
+
+    //-------------------------------------------
+    //  Google Code
+    //===========================================
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -31,10 +34,6 @@ public class MainActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
-
-    //-------------------------------------------
-    //  Declare Variables
-    //===========================================
 
 
     //-------------------------------------------
@@ -185,28 +184,6 @@ public class MainActivity extends AppCompatActivity {
                     return "Contact";
             }
             return null;
-        }
-    }
-
-    //-------------------------------------------
-    //  Delivery Radio Button
-    //===========================================
-    public void onRadioButtonClicked(View view) {
-        // Is the button checked now?
-        boolean checked = ((RadioButton) view).isChecked();
-
-        switch (view.getId()) {
-            case R.id.pickup_radio_button:
-                if (checked)
-                break;
-
-            case R.id.free_delivery_radio:
-                if (checked)
-                break;
-
-            case R.id.standard_delivery_radio:
-                if (checked)
-                break;
         }
     }
 }
