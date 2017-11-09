@@ -16,6 +16,9 @@ import android.view.ViewGroup;
 
 public class MainActivity extends AppCompatActivity {
 
+    //ToDo: Add google maps intent to contact screen
+    //ToDo: Add phone call intent to contact screen
+
     //-------------------------------------------
     //  Google Code
     //===========================================
@@ -34,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
-
 
     //-------------------------------------------
     //  On Create

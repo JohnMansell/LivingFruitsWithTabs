@@ -10,11 +10,12 @@
     android:fillViewport="true">
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/order_screen_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
         android:clipToPadding="false"
-        android:elevation="@dimen/buttonElevation"
-        android:background="@color/colorWhite">
+        android:elevation="@dimen/buttonElevation">
 
 
         <TextView
@@ -254,14 +255,17 @@
         <RadioGroup
             android:id="@+id/radioGroup"
             android:layout_width="265dp"
-            android:layout_height="wrap_content"
+            android:layout_height="91dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:gravity="left"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/shippingText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radio_group_title"
-            tools:layout_editor_absoluteX="107dp"
-            tools:layout_editor_absoluteY="501dp">
+            app:layout_constraintVertical_chainStyle="packed">
 
             <RadioButton
                 android:id="@+id/pickup_radio_button"
@@ -299,66 +303,47 @@
             app:layout_constraintLeft_toLeftOf="@+id/radioGroup"
             app:layout_constraintTop_toBottomOf="@+id/subtotal_text" />
 
-        <EditText
-            android:id="@+id/edit_text_post_code"
-            android:layout_width="158dp"
-            android:layout_height="42dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/rounded_edit_text"
-            android:hint="  Post Code"
-            android:inputType="number"
-            app:layout_constraintLeft_toLeftOf="@+id/radioGroup"
-            app:layout_constraintRight_toLeftOf="@+id/calculate_button"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-        <Button
-            android:id="@+id/calculate_button"
-            android:layout_width="103dp"
-            android:layout_height="42dp"
-            android:background="@drawable/my_button"
-            android:includeFontPadding="true"
-            android:text="Calculate"
-            android:textColor="@android:color/white"
-            app:layout_constraintRight_toRightOf="@+id/radioGroup"
-            app:layout_constraintTop_toTopOf="@+id/edit_text_post_code" />
-
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/shippingText"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="19dp"
+            android:layout_marginTop="24dp"
             android:text="Shipping Cost:"
+            app:layout_constraintBottom_toTopOf="@+id/totalText"
             app:layout_constraintEnd_toStartOf="@+id/shippingPrice"
-            app:layout_constraintTop_toTopOf="@+id/shippingPrice" />
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
             android:id="@+id/shippingPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            app:layout_constraintEnd_toEndOf="@+id/calculate_button"
-            app:layout_constraintTop_toBottomOf="@+id/calculate_button"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/radioGroup"
+            app:layout_constraintTop_toTopOf="@+id/shippingText"
             tools:text="$10.00" />
 
         <TextView
             android:id="@+id/totalPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
             android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/totalText"
             app:layout_constraintEnd_toEndOf="@+id/shippingPrice"
-            app:layout_constraintTop_toBottomOf="@+id/shippingPrice"
+            app:layout_constraintTop_toTopOf="@+id/totalText"
             tools:text="$66.00" />
 
         <TextView
             android:id="@+id/totalText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
             android:includeFontPadding="false"
             android:text="Order Total:"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/continueButton1"
             app:layout_constraintEnd_toStartOf="@+id/totalPrice"
-            app:layout_constraintTop_toTopOf="@+id/totalPrice" />
+            app:layout_constraintTop_toBottomOf="@+id/shippingText" />
 
         <Button
             android:id="@+id/continueButton1"
@@ -369,22 +354,72 @@
             android:padding="25dp"
             android:text="Order"
             android:textColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@+id/textView6"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
-            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/totalText" />
+            app:layout_constraintTop_toBottomOf="@+id/totalText"
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="135dp"
-            android:layout_height="198dp"
-            android:layout_marginTop="120dp"
+            android:layout_height="182dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/continueButton1"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/continueButton1"
-            app:layout_constraintTop_toBottomOf="@+id/totalText"
+            app:layout_constraintTop_toBottomOf="@+id/continueButton1"
+            app:layout_constraintVertical_chainStyle="packed"
             tools:text="Space" />
+
+        <RadioGroup
+            android:id="@+id/std_delivery_group"
+            android:layout_width="207dp"
+            android:layout_height="88dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/radioGroup"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup">
+
+            <RadioButton
+                android:id="@+id/std_delivery_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/radio_delivery_1"
+                android:textSize="@dimen/std_deliver_text_size" />
+
+            <RadioButton
+                android:id="@+id/std_delivery_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/radio_delivery_2"
+                android:textSize="@dimen/std_deliver_text_size" />
+
+            <RadioButton
+                android:id="@+id/std_delivry_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/radio_delivery_3"
+                android:textSize="@dimen/std_deliver_text_size" />
+
+            <RadioButton
+                android:id="@+id/std_delivry_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/radio_delivery_4"
+                android:textSize="@dimen/std_deliver_text_size"
+                android:visibility="visible" />
+        </RadioGroup>
 
 
     </android.support.constraint.ConstraintLayout>
