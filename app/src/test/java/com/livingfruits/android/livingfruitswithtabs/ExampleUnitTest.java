@@ -1,4 +1,4 @@
-package com.example.android.livingfruitswithtabs;
+package com.livingfruits.android.livingfruitswithtabs;
 
 import org.junit.Test;
 

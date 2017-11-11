@@ -1,4 +1,4 @@
-package com.example.android.livingfruitswithtabs;
+package com.livingfruits.android.livingfruitswithtabs;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * An example full-screen activity that shows and hides the system UI (i.e.
+ * An livingfruits full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
 public class FullscreenActivity extends AppCompatActivity implements View.OnClickListener {

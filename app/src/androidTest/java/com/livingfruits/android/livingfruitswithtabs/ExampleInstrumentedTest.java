@@ -1,4 +1,4 @@
-package com.example.android.livingfruitswithtabs;
+package com.livingfruits.android.livingfruitswithtabs;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.android.livingfruitswithtabs", appContext.getPackageName());
+        assertEquals("com.livingfruits.android.livingfruitswithtabs", appContext.getPackageName());
     }
 }

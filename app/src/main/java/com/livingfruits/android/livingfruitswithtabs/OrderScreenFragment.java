@@ -1,4 +1,4 @@
-package com.example.android.livingfruitswithtabs;
+package com.livingfruits.android.livingfruitswithtabs;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,8 +17,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.johnmansell.livingfruits.paymentActivity;
 
 import java.util.Locale;
 

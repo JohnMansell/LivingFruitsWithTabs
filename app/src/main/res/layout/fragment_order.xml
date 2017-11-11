@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:orientation="vertical"
-    tools:context="com.example.android.livingfruitswithtabs.MainActivity$PlaceholderFragment"
+    tools:context="com.livingfruits.android.livingfruitswithtabs.MainActivity$PlaceholderFragment"
     android:fillViewport="true">
 
     <!-- ToDo: add shadow to blueberry buttons -->

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.livingfruitswithtabs">
+    package="com.livingfruits.android.livingfruitswithtabs">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".FullscreenActivity"
+            android:name="com.livingfruits.android.livingfruitswithtabs.FullscreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_fullscreen"
             android:theme="@style/FullscreenTheme">
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.livingfruits.android.livingfruitswithtabs.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden">
@@ -31,7 +31,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.johnmansell.livingfruits.paymentActivity"
+            android:name="com.livingfruits.android.livingfruitswithtabs.paymentActivity"
             android:label="Your Order Summary">
         </activity>
         <meta-data
@@ -45,7 +45,7 @@ Use for Recovery
 
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.livingfruitswithtabs">
+    packalivingfruitsruitsmple.android.livingfruitswithtabs">
 
     <application
         android:allowBackup="true"

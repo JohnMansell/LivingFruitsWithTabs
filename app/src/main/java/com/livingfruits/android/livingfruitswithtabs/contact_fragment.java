@@ -1,4 +1,4 @@
-package com.johnmansell.livingfruits;
+package com.livingfruits.android.livingfruitswithtabs;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -11,8 +11,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.example.android.livingfruitswithtabs.R;
 
 public class contact_fragment extends Fragment {
     //-------------------------------------------

@@ -1,4 +1,4 @@
-package com.johnmansell.livingfruits;
+package com.livingfruits.android.livingfruitswithtabs;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.android.livingfruitswithtabs.R;
 import com.google.android.gms.identity.intents.model.UserAddress;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
