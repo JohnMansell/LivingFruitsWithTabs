@@ -9,13 +9,16 @@
     tools:context="com.example.android.livingfruitswithtabs.MainActivity$PlaceholderFragment"
     android:fillViewport="true">
 
+    <!-- ToDo: add shadow to blueberry buttons -->
+
     <android.support.constraint.ConstraintLayout
         android:id="@+id/order_screen_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorWhite"
         android:clipToPadding="false"
-        android:elevation="@dimen/buttonElevation">
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="false">
 
 
         <TextView
@@ -27,6 +30,7 @@
             android:text="@string/order_cover_1"
             android:textColor="@color/colorWhite"
             android:textSize="20sp"
+            android:textStyle="normal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_constraintLeft_creator="1"
@@ -85,13 +89,14 @@
 
         <TextView
             android:id="@+id/icon125"
-            android:layout_width="84dp"
-            android:layout_height="32dp"
+            android:layout_width="112dp"
+            android:layout_height="85dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/icon_125g"
+            android:background="@drawable/icon_125_shadow"
             android:gravity="center"
             android:text="125g"
             android:textColor="@color/colorWhite"
+            android:textStyle="bold"
             app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintLeft_toLeftOf="@+id/guideline4"
             app:layout_constraintRight_toLeftOf="@+id/guideline4"
@@ -101,14 +106,12 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
             android:text="$4 each"
+            app:layout_constraintBottom_toBottomOf="@+id/icon125"
             app:layout_constraintLeft_toLeftOf="@+id/icon125"
-            app:layout_constraintRight_toRightOf="@+id/icon125"
-            app:layout_constraintTop_toBottomOf="@+id/icon125" />
+            app:layout_constraintRight_toRightOf="@+id/icon125" />
 
         <EditText
             android:id="@+id/editText_125"
@@ -118,6 +121,7 @@
             android:inputType="number"
             android:text="0"
             android:textColorLink="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/textView8"
             app:layout_constraintHorizontal_bias="0.551"
             app:layout_constraintLeft_toLeftOf="@+id/guideline5"
             app:layout_constraintRight_toLeftOf="@+id/guideline5"
@@ -125,15 +129,14 @@
 
         <TextView
             android:id="@+id/icon_400"
-            android:layout_width="95dp"
-            android:layout_height="54dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp"
+            android:layout_width="114dp"
+            android:layout_height="81dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/icon_400g"
+            android:background="@drawable/icon_400_shadow"
             android:gravity="center"
             android:text="400g"
             android:textColor="@color/colorWhite"
+            android:textStyle="bold"
             app:layout_constraintHorizontal_bias="0.505"
             app:layout_constraintLeft_toLeftOf="@+id/guideline4"
             app:layout_constraintRight_toLeftOf="@+id/guideline4"
@@ -145,14 +148,12 @@
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
             android:text="$12 each"
+            app:layout_constraintBottom_toBottomOf="@+id/icon_400"
             app:layout_constraintLeft_toLeftOf="@+id/icon_400"
             app:layout_constraintRight_toRightOf="@+id/icon_400"
-            app:layout_constraintTop_toBottomOf="@+id/icon_400"
             tools:layout_constraintLeft_creator="1"
             tools:layout_constraintTop_creator="1" />
 
@@ -160,9 +161,11 @@
             android:id="@+id/edit_text_600"
             android:layout_width="79dp"
             android:layout_height="55dp"
+            android:layout_marginBottom="8dp"
             android:gravity="center_horizontal"
             android:inputType="number"
             android:text="0"
+            app:layout_constraintBottom_toBottomOf="@+id/textView12"
             app:layout_constraintHorizontal_bias="0.437"
             app:layout_constraintLeft_toLeftOf="@+id/guideline5"
             app:layout_constraintRight_toLeftOf="@+id/guideline5"
@@ -175,10 +178,12 @@
             android:id="@+id/edit_text_400"
             android:layout_width="79dp"
             android:layout_height="55dp"
+            android:layout_marginBottom="8dp"
             android:layout_marginLeft="8dp"
             android:gravity="center_horizontal"
             android:inputType="number"
             android:text="0"
+            app:layout_constraintBottom_toBottomOf="@+id/textView10"
             app:layout_constraintHorizontal_bias="0.551"
             app:layout_constraintLeft_toLeftOf="@+id/guideline5"
             app:layout_constraintRight_toLeftOf="@+id/guideline5"
@@ -189,16 +194,14 @@
 
         <TextView
             android:id="@+id/icon_600"
-            android:layout_width="112dp"
-            android:layout_height="67dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp"
+            android:layout_width="152dp"
+            android:layout_height="111dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/icon_600"
+            android:background="@drawable/icon_600_shadow"
             android:gravity="center"
             android:text="600g"
             android:textColor="@color/colorWhite"
+            android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="@+id/guideline4"
             app:layout_constraintRight_toLeftOf="@+id/guideline4"
             app:layout_constraintTop_toBottomOf="@+id/textView10" />
@@ -207,14 +210,10 @@
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="14dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="0dp"
             android:text="$16 each"
-            app:layout_constraintLeft_toLeftOf="@+id/icon_600"
-            app:layout_constraintRight_toRightOf="@+id/icon_600"
-            app:layout_constraintTop_toBottomOf="@+id/icon_600"
+            app:layout_constraintBottom_toBottomOf="@+id/icon_600"
+            app:layout_constraintEnd_toEndOf="@+id/icon_600"
+            app:layout_constraintStart_toStartOf="@+id/icon_600"
             tools:layout_constraintRight_creator="1"
             tools:layout_constraintTop_creator="1" />
 
@@ -258,9 +257,7 @@
             android:layout_height="91dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:gravity="left"
-            app:layout_constraintBottom_toTopOf="@+id/shippingText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -307,12 +304,11 @@
             android:id="@+id/shippingText"
             android:layout_width="wrap_content"
             android:layout_height="19dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
             android:text="Shipping Cost:"
-            app:layout_constraintBottom_toTopOf="@+id/totalText"
             app:layout_constraintEnd_toStartOf="@+id/shippingPrice"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-            app:layout_constraintVertical_chainStyle="packed" />
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
         <TextView
             android:id="@+id/shippingPrice"
@@ -337,11 +333,10 @@
             android:id="@+id/totalText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
             android:includeFontPadding="false"
             android:text="Order Total:"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/continueButton1"
             app:layout_constraintEnd_toStartOf="@+id/totalPrice"
             app:layout_constraintTop_toBottomOf="@+id/shippingText" />
 
@@ -354,7 +349,6 @@
             android:padding="25dp"
             android:text="Order"
             android:textColor="@android:color/white"
-            app:layout_constraintBottom_toTopOf="@+id/textView6"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -363,26 +357,13 @@
             app:layout_constraintTop_toBottomOf="@+id/totalText"
             app:layout_constraintVertical_chainStyle="packed" />
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="135dp"
-            android:layout_height="182dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/continueButton1"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="@+id/continueButton1"
-            app:layout_constraintTop_toBottomOf="@+id/continueButton1"
-            app:layout_constraintVertical_chainStyle="packed"
-            tools:text="Space" />
-
         <RadioGroup
             android:id="@+id/std_delivery_group"
             android:layout_width="207dp"
             android:layout_height="88dp"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="8dp"
-            android:visibility="gone"
+            android:layout_marginTop="16dp"
+            android:visibility="invisible"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toStartOf="@+id/radioGroup"
             app:layout_constraintTop_toBottomOf="@+id/radioGroup">
@@ -420,6 +401,28 @@
                 android:textSize="@dimen/std_deliver_text_size"
                 android:visibility="visible" />
         </RadioGroup>
+
+        <ImageView
+            android:id="@+id/orderScreenLogo"
+            android:layout_width="@dimen/bottomIconWidth"
+            android:layout_height="@dimen/bottomIconWidth"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/living_fruits_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/continueButton1" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="@dimen/bottomSpaceHeight"
+            android:layout_height="@dimen/bottomSpaceHeight"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orderScreenLogo"
+            tools:text="-- Space --" />
 
 
     </android.support.constraint.ConstraintLayout>

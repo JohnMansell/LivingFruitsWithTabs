@@ -1,24 +1,24 @@
 package com.example.android.livingfruitswithtabs;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.ConstraintSet;
 import android.text.SpannableString;
 import android.text.style.RelativeSizeSpan;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.johnmansell.livingfruits.paymentActivity;
 
 import java.util.Locale;
 
@@ -72,8 +72,15 @@ public class OrderScreenFragment extends android.support.v4.app.Fragment {
             int NONE = 0;
             int PICKUP = 1;
             int CBD_DELIVERY = 2;
-            int STD_DELIVERY = 3;
+            int STD_DELIVERY_NORTH_OF_AUCLKAND = 3;
+            int STD_DELIVERY_WARKWORTH_NORTH = 4;
+            int STD_DELIVERY_AUCKLAND = 5;
+            int STD_DELIVERY_NZ = 6;
+            int STD_DELIVERY = 0;
             String deliveryType = "";
+
+        // Image View
+            ImageView orderScreenLogo;
 
         // Constraint Layout
             ConstraintLayout constraintLayout;
@@ -96,10 +103,6 @@ public class OrderScreenFragment extends android.support.v4.app.Fragment {
                                  Bundle savedInstanceState) {
             // Inflate the Layout for this fragment
                 View myView = inflater.inflate(R.layout.fragment_order, container, false);
-                constraintLayout = (ConstraintLayout) myView.findViewById(R.id.order_screen_layout);
-                set = new ConstraintSet();
-                set.clone(constraintLayout);
-                set.applyTo(constraintLayout);
 
             // Radio Groups
                 RadioGroup deliveryGroup = (RadioGroup) myView.findViewById(R.id.radioGroup);
@@ -115,7 +118,7 @@ public class OrderScreenFragment extends android.support.v4.app.Fragment {
                                 delivery = PICKUP;
                                 deliveryType = "Pick-Up";
                                 updatePrice();
-                                stdDeliveryGroup.setVisibility(View.GONE);
+                                stdDeliveryGroup.setVisibility(View.INVISIBLE);
                                 break;
 
                             case R.id.free_delivery_radio:
@@ -123,7 +126,7 @@ public class OrderScreenFragment extends android.support.v4.app.Fragment {
                                 delivery = CBD_DELIVERY;
                                 deliveryType = "CBD - Delivery";
                                 updatePrice();
-                                stdDeliveryGroup.setVisibility(View.GONE);
+                                stdDeliveryGroup.setVisibility(View.INVISIBLE);
                                 break;
 
                             case R.id.standard_delivery_radio:
@@ -132,15 +135,14 @@ public class OrderScreenFragment extends android.support.v4.app.Fragment {
                                 deliveryType = "Standard Delivery";
                                 stdDeliveryGroup.setVisibility(View.VISIBLE);
 
-                                SystemClock.sleep(2000);
-
                                 break;
                         }
 
                         if (stdDeliveryGroup.getVisibility() == View.VISIBLE) {
-                            toMove = stdDeliveryGroup.getHeight(); }
+                            toMove = (stdDeliveryGroup.getHeight() + 80);
+                        }
 
-                        if (stdDeliveryGroup.getVisibility() == View.GONE) {
+                        if (stdDeliveryGroup.getVisibility() == View.INVISIBLE) {
                             toMove = 0;}
 
                             shippingNumber.animate().translationY(toMove);
@@ -148,8 +150,45 @@ public class OrderScreenFragment extends android.support.v4.app.Fragment {
                             orderButton.animate().translationY(toMove);
                             totalText.animate().translationY(toMove);
                             totalNumber.animate().translationY(toMove);
+                            orderScreenLogo.animate().translationY(toMove);
+
                     }
                 });
+
+            stdDeliveryGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+            {
+                public void onCheckedChanged(RadioGroup group, int checkedId) {
+                    // Checked ID is the radio button selected
+
+                    switch (checkedId) {
+                        case R.id.std_delivery_1:
+                            // North of Auckland
+                            delivery = STD_DELIVERY_NORTH_OF_AUCLKAND;
+                            shipping = 0.0;
+                            break;
+
+                        case R.id.std_delivery_2:
+                            // Warkworth North
+                            delivery = STD_DELIVERY_WARKWORTH_NORTH;
+                            shipping = 9.00;
+                            break;
+
+                        case R.id.std_delivry_3:
+                            // Auckland
+                            delivery = STD_DELIVERY_AUCKLAND;
+                            shipping = 11.00;
+                            break;
+
+                        case R.id.std_delivry_4:
+                            // Rest of New Zealand
+                            delivery = STD_DELIVERY_NZ;
+                            shipping = 18.00;
+                            break;
+                    }
+                    updatePrice();
+
+                }
+            });
 
             return myView;
 
@@ -225,9 +264,12 @@ public class OrderScreenFragment extends android.support.v4.app.Fragment {
                 orderButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        sendEmail();
+                        startPaymentActivity(view);
                     }
                 });
+
+            // Image View
+                orderScreenLogo = view.findViewById(R.id.orderScreenLogo);
 
 
             // Set sign in text
@@ -273,14 +315,41 @@ public class OrderScreenFragment extends android.support.v4.app.Fragment {
                     }
                 });
 
-            //-----------------------------
-            // Edit Text Listeners
-            //-----------------------------
+            if (stdDeliveryGroup.getVisibility() == View.VISIBLE) {
+                toMove = (stdDeliveryGroup.getHeight() + 80);
+            }
+
+            if (stdDeliveryGroup.getVisibility() == View.INVISIBLE) {
+                toMove = 0;}
+
+            shippingNumber.animate().translationY(toMove);
+            shippingText.animate().translationY(toMove);
+            orderButton.animate().translationY(toMove);
+            totalText.animate().translationY(toMove);
+            totalNumber.animate().translationY(toMove);
+            orderScreenLogo.animate().translationY(toMove);
 
         }
     //-------------------------------------------
     //  End On View Created
     //===========================================
+    @Override
+    public void onStart() {
+            super.onStart();
+        if (stdDeliveryGroup.getVisibility() == View.VISIBLE) {
+            toMove = (stdDeliveryGroup.getHeight() + 80);
+        }
+
+        if (stdDeliveryGroup.getVisibility() == View.INVISIBLE) {
+            toMove = 0;}
+
+        shippingNumber.animate().translationY(toMove);
+        shippingText.animate().translationY(toMove);
+        orderButton.animate().translationY(toMove);
+        totalText.animate().translationY(toMove);
+        totalNumber.animate().translationY(toMove);
+        orderScreenLogo.animate().translationY(toMove);
+    }
 
 
 
@@ -319,46 +388,37 @@ public class OrderScreenFragment extends android.support.v4.app.Fragment {
     //-------------------------------------------
     //  Order Button Create Intent
     //===========================================
-        protected void sendEmail(){
+
+        public void startPaymentActivity(View view) {
 
             // Check For Delivery Method:
-                if (delivery == NONE){
+                if (delivery == NONE) {
                     Toast.makeText(getActivity(), "Please Choose a Delivery Method", Toast.LENGTH_SHORT).show();
                     return;
+                }
+
+            if ((count125 == 0) && (count400 == 0) && (count600 == 0)) {
+                Toast.makeText(getActivity(), "Your order has zero blueberries", Toast.LENGTH_SHORT).show();
+                return;
             }
 
 
-            Log.i("Send email", "");
-            String[] TO = {"info@livingfruits.co.nz"};
-            Intent emailIntent = new Intent(Intent.ACTION_SEND);
+            // Build Intent
+                    Intent paymentIntent = new Intent(getContext(), paymentActivity.class);
 
-            // Build String
-                StringBuilder messageString = new StringBuilder();
-                messageString.append("BlueBerries Order:\n\n");
-                messageString.append("BlueBerry Amounts: \n");
-                messageString.append("\n125 g: -- " + count125);
-                messageString.append("\n400 g: -- " + count400);
-                messageString.append("\n600 g: -- " + count600);
-                messageString.append("\n\n\nSubtotal: ");
-                messageString.append(subTotal);
-                messageString.append("\nShipping: ");
-                messageString.append(shipping);
-                messageString.append("\nTotal: ");
-                messageString.append(total);
-                String myMessage = messageString.toString();
+                    Bundle intentBundle = new Bundle();
+                    intentBundle.putDouble("subTotal", subTotal);
+                    intentBundle.putDouble("shipping", shipping);
+                    intentBundle.putDouble("total", total);
+                    intentBundle.putInt("count125", count125);
+                    intentBundle.putInt("count400", count400);
+                    intentBundle.putInt("count600", count600);
+                    intentBundle.putInt("delivery", delivery);
+                    paymentIntent.putExtras(intentBundle);
 
-            // Intent
-                emailIntent.setData(Uri.parse("mailto:"));
-                emailIntent.setType("message/rfc822");
-                emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "BlueBerry Order");
-                emailIntent.putExtra(Intent.EXTRA_TEXT, myMessage);
-                startActivity(emailIntent);
+            // Start Activity
+                    startActivity(paymentIntent);
     }
-
-
-
-
 
 
 

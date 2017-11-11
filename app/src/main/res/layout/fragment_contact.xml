@@ -20,7 +20,10 @@
         android:gravity="center"
         android:text="Contact us"
         android:textColor="@color/colorWhite"
-        android:textSize="@dimen/cover_font_size"
+        android:textSize="48sp"
+        android:textStyle="normal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,10 +55,11 @@
         app:layout_constraintGuide_begin="40dp" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/phoneIcon_land"
         android:layout_width="@dimen/phoneIcon"
         android:layout_height="@dimen/phoneIcon"
         android:layout_marginTop="8dp"
+        android:clickable="true"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/contactNames"
         app:srcCompat="@drawable/phone_icon" />
@@ -65,30 +69,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:clickable="true"
         android:text="@string/phoneLandline"
+        android:textColor="@color/Burgundy"
         android:textSize="@dimen/contactScreenTextSize"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintBottom_toBottomOf="@+id/phoneIcon_land"
+        app:layout_constraintStart_toEndOf="@+id/phoneIcon_land"
+        app:layout_constraintTop_toTopOf="@+id/phoneIcon_land" />
 
     <TextView
         android:id="@+id/mobilePhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:clickable="true"
         android:text="@string/phoneMobile"
+        android:textColor="@color/Burgundy"
         android:textSize="@dimen/contactScreenTextSize"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintBottom_toBottomOf="@+id/phoneIcon_mobile"
+        app:layout_constraintStart_toEndOf="@+id/phoneIcon_mobile"
+        app:layout_constraintTop_toTopOf="@+id/phoneIcon_mobile" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/phoneIcon_mobile"
         android:layout_width="@dimen/phoneIcon"
         android:layout_height="@dimen/phoneIcon"
         android:layout_marginTop="8dp"
+        android:clickable="true"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/phoneIcon_land"
         app:srcCompat="@drawable/phone_icon" />
 
     <TextView
@@ -100,7 +109,7 @@
         android:textColor="@color/Burgundy"
         android:textSize="@dimen/contactScreenTextSize"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneIcon_mobile" />
 
     <TextView
         android:id="@+id/physicalAddress"

@@ -58,11 +58,20 @@
 
     <string name="sign_in2"> Sign in for easier ordering, &#xA;or continue below.</string>
 
-        // Radio Buttons
-        <string name="radio_delivery_1">North of Auckland</string>
-        <string name="radio_delivery_2">Warkworth North</string>
-        <string name="radio_delivery_3">Auckland</string>
-        <string name="radio_delivery_4">Rest of New Zealand</string>
+    // Radio Buttons
+    <string name="radio_delivery_1">North of Auckland</string>
+    <string name="radio_delivery_2">Warkworth North</string>
+    <string name="radio_delivery_3">Auckland</string>
+    <string name="radio_delivery_4">Rest of New Zealand</string>
+
+    //--------------------
+    // Payment Activity
+    //--------------------
+    <string name="place_holder_address">John Mansell\n1035 Contessa\nIrvine, Ca, 92620</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>
 

@@ -8,11 +8,16 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.SpannableString;
+import android.text.style.RelativeSizeSpan;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.johnmansell.livingfruits.contact_fragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -65,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         int defaultValue = 0;
         int page = getIntent().getIntExtra("Page", defaultValue);
         mViewPager.setCurrentItem(page);
+
     }
 
     //-------------------------------------------
@@ -142,7 +148,21 @@ public class MainActivity extends AppCompatActivity {
                     myFragment = R.layout.fragment_menu;
             }
 
+
+
             View rootView = inflater.inflate(myFragment, container, false);
+
+            // Set Cover photo text
+            String spanCoverText = "About\nLiving Fruits\nBlueberries";
+            SpannableString mySpanable = new SpannableString(spanCoverText);
+            mySpanable.setSpan(new RelativeSizeSpan(1.5f), 6, 31, 0);
+            TextView aboutCoverText;
+            if (rootView.findViewById(R.id.aboutUsCover) != null) {
+                aboutCoverText = rootView.findViewById(R.id.aboutUsCover);
+                aboutCoverText.setText(mySpanable);
+            }
+
+
             return rootView;
         }
     }
@@ -161,6 +181,10 @@ public class MainActivity extends AppCompatActivity {
             switch (position) {
                 case 0:
                     return OrderScreenFragment.newInstance();
+
+                case 2:
+                    return contact_fragment.newInstance();
+
                 default:
                     return PlaceholderFragment.newInstance(position + 1);
             }

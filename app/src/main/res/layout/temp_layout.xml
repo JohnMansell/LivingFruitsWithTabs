@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.johnmansell.livingfruits.paymentActivity">
 
-<android.support.constraint.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
 
     <Button
         android:id="@+id/buyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/my_button"
         android:includeFontPadding="false"
         android:paddingHorizontal="30dp"
-        android:text="Payment Details"
+        android:text="Place Order"
         android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/summary_order_total_text" />
@@ -115,7 +113,7 @@
         tools:text="1" />
 
     <TextView
-        android:id="@+id/summary_count600"
+        android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -163,7 +161,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="Delivery:"
+        android:text="Delivery to:"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -197,18 +195,26 @@
         android:id="@+id/summary_shipping_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:text="Shipping: "
-        app:layout_constraintEnd_toEndOf="@+id/summary_subtotalText"
+        app:layout_constraintEnd_toStartOf="@+id/summary_shipping_number"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/summary_subtotalText" />
 
     <TextView
         android:id="@+id/summary_order_total_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:text="Order Total: "
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/summary_shipping_text"
+        app:layout_constraintEnd_toStartOf="@+id/summary_total_number"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/summary_shipping_text" />
 
     <TextView
@@ -226,8 +232,11 @@
         android:id="@+id/summary_shipping_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/summary_total_number"
-        app:layout_constraintStart_toStartOf="@+id/summary_subtotal_numberl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/summary_shipping_text"
+        app:layout_constraintTop_toBottomOf="@+id/summary_subtotal_numberl"
         tools:text="$10.00" />
 
     <TextView
@@ -236,22 +245,11 @@
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/summary_shipping_number"
-        app:layout_constraintTop_toTopOf="@+id/summary_order_total_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/summary_order_total_text"
+        app:layout_constraintTop_toBottomOf="@+id/summary_shipping_number"
         tools:text="$66.00" />
 
-    <ImageView
-        android:id="@+id/summary_logo"
-        android:layout_width="@dimen/bottomIconWidth"
-        android:layout_height="@dimen/bottomIconWidth"
-        android:layout_marginTop="8dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buyButton"
-        app:srcCompat="@drawable/living_fruits_logo" />
-
 </android.support.constraint.ConstraintLayout>
-
-</ScrollView>

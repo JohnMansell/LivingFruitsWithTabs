@@ -21,6 +21,8 @@
             android:gravity="center"
             android:text="@string/aboutUsCoverText"
             android:textColor="@color/colorWhite"
+            android:textSize="@dimen/cover_font_size"
+            android:textStyle="normal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -87,10 +89,25 @@
             android:id="@+id/textView16"
             android:layout_width="89dp"
             android:layout_height="106dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintHorizontal_bias="0.435"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/textView15"
+            app:layout_constraintTop_toBottomOf="@+id/about_us_logo"
             tools:text="spaceText" />
+
+        <ImageView
+            android:id="@+id/about_us_logo"
+            android:layout_width="@dimen/bottomIconWidth"
+            android:layout_height="@dimen/bottomIconWidth"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15"
+            app:srcCompat="@drawable/living_fruits_logo"
+            android:scaleType="centerCrop"/>
     </android.support.constraint.ConstraintLayout>
 
 </ScrollView>

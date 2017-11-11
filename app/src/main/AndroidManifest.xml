@@ -27,11 +27,16 @@
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.johnmansell.livingfruits.paymentActivity"></activity>
+        <activity
+            android:name="com.johnmansell.livingfruits.paymentActivity"
+            android:label="Your Order Summary">
+        </activity>
+        <meta-data
+            android:name="com.google.android.gms.wallet.api.enabled"
+            android:value="true" />
     </application>
 
 </manifest><!--

@@ -7,7 +7,7 @@
 
     // Cover Photos
     <dimen name="cover_photo_size">250dp</dimen>
-    <dimen name="cover_font_size">24sp</dimen>
+    <dimen name="cover_font_size">28sp</dimen>
 
     // Order Activity
 
@@ -32,6 +32,14 @@
     <dimen name="welcomTextBottomPadding">80dp</dimen>
     <dimen name="homeButtonHeight">35dp</dimen>
     <dimen name="std_deliver_text_size">12sp</dimen>
+    <dimen name="icon125_width">84dp</dimen>
+    <dimen name="icon125_height">32dp</dimen>
+    <dimen name="icon400_height">54dp</dimen>
+    <dimen name="icon400_width">95dp</dimen>
+    <dimen name="icon600_width">112dp</dimen>
+    <dimen name="icon600_height">67dp</dimen>
+    <dimen name="bottomIconWidth">225dp</dimen>
+    <dimen name="bottomSpaceHeight">122dp</dimen>
 
 
     //
