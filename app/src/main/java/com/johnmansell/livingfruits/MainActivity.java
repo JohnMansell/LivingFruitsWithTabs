@@ -1,4 +1,4 @@
-package com.livingfruits.android.livingfruitswithtabs;
+package com.johnmansell.livingfruits;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -16,6 +16,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.livingfruits.johnmansell.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+
 
     //-------------------------------------------
     //  On Create

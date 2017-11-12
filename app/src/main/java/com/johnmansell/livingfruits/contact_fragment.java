@@ -1,4 +1,4 @@
-package com.livingfruits.android.livingfruitswithtabs;
+package com.johnmansell.livingfruits;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.livingfruits.johnmansell.R;
 
 public class contact_fragment extends Fragment {
     //-------------------------------------------
@@ -32,7 +34,7 @@ public class contact_fragment extends Fragment {
         // Phone Numbers
             String land_line_string = "+64-09-407-6880";
             String mobile_number_string = "+64-021-171-6061";
-            String email_string = "info@livingFruits.co.nz";
+            String email_string = "info@livingfruits.co.nz";
             String latitude = "-35.185002";
             String longitude = "173.931100";
             Uri gmmIntentUri = Uri.parse("geo:-35.185002, 173.931100");

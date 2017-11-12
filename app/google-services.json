@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "462350727648",
+    "firebase_url": "https://living-fruits.firebaseio.com",
+    "project_id": "living-fruits",
+    "storage_bucket": "living-fruits.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462350727648:android:1d7054af37089140",
+        "android_client_info": {
+          "package_name": "com.johnmansell.livingfruits"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "462350727648-288d160qp99qi1dpbaqvkcvp23730a3g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.johnmansell.livingfruits",
+            "certificate_hash": "f803dfe9c3c8c4ad5e48bb58837b59b6559ad864"
+          }
+        },
+        {
+          "client_id": "462350727648-1ifpaj0u6ph36lkuoh64tbklgppi99k8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBpZLXQ8P_2qOsxeWlLiNI-W7nzZXcDgc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "462350727648-1ifpaj0u6ph36lkuoh64tbklgppi99k8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

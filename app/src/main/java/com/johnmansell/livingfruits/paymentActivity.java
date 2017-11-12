@@ -1,4 +1,4 @@
-package com.livingfruits.android.livingfruitswithtabs;
+package com.johnmansell.livingfruits;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -25,6 +25,7 @@ import com.google.android.gms.wallet.PaymentsClient;
 import com.google.android.gms.wallet.TransactionInfo;
 import com.google.android.gms.wallet.Wallet;
 import com.google.android.gms.wallet.WalletConstants;
+import com.livingfruits.johnmansell.R;
 import com.stripe.android.exception.APIException;
 import com.stripe.android.model.Token;
 import com.stripe.android.view.CardInputWidget;
@@ -33,6 +34,8 @@ import java.util.Arrays;
 import java.util.Locale;
 
 public class paymentActivity extends AppCompatActivity {
+
+    // ToDo: Set icons to correct size and price !!!!
 
     //-------------------------------------------
     //  Declare Variables

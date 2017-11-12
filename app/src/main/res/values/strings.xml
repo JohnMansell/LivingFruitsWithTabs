@@ -59,7 +59,7 @@
     <string name="sign_in2"> Sign in for easier ordering, &#xA;or continue below.</string>
 
     // Radio Buttons
-    <string name="radio_delivery_1">North of Auckland</string>
+    <string name="radio_delivery_1">Northland and Warkworth</string>
     <string name="radio_delivery_2">Warkworth North</string>
     <string name="radio_delivery_3">Auckland</string>
     <string name="radio_delivery_4">Rest of New Zealand</string>

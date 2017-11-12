@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:orientation="vertical"
-    tools:context="com.livingfruits.android.livingfruitswithtabs.MainActivity$PlaceholderFragment"
+    tools:context="com.johnmansell.livingfruits.MainActivity$PlaceholderFragment"
     android:fillViewport="true">
 
     <!-- ToDo: add shadow to blueberry buttons -->
@@ -60,11 +60,7 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="7dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:text="Size:"
             android:textSize="@dimen/size_quant_text_size"
             app:layout_constraintHorizontal_bias="0.27"
@@ -88,14 +84,15 @@
             app:layout_constraintTop_toTopOf="@+id/textView4" />
 
         <TextView
-            android:id="@+id/icon125"
-            android:layout_width="112dp"
-            android:layout_height="85dp"
+            android:id="@+id/icon_400"
+            android:layout_width="117dp"
+            android:layout_height="108dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/icon_125_shadow"
             android:gravity="center"
-            android:text="125g"
+            android:text="400g"
             android:textColor="@color/colorWhite"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintLeft_toLeftOf="@+id/guideline4"
@@ -103,58 +100,78 @@
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/price_lable_400"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:text="$4 each"
-            app:layout_constraintBottom_toBottomOf="@+id/icon125"
-            app:layout_constraintLeft_toLeftOf="@+id/icon125"
-            app:layout_constraintRight_toRightOf="@+id/icon125" />
+            android:text="15"
+            app:layout_constraintBottom_toBottomOf="@+id/icon_400"
+            app:layout_constraintLeft_toLeftOf="@+id/icon_400"
+            app:layout_constraintRight_toRightOf="@+id/icon_400"
+            tools:text="$15 each" />
 
         <EditText
-            android:id="@+id/editText_125"
+            android:id="@+id/edit_text_400"
             android:layout_width="79dp"
             android:layout_height="55dp"
             android:gravity="center_horizontal"
             android:inputType="number"
             android:text="0"
             android:textColorLink="@android:color/black"
-            app:layout_constraintBottom_toBottomOf="@+id/textView8"
+            app:layout_constraintBottom_toBottomOf="@+id/price_lable_400"
             app:layout_constraintHorizontal_bias="0.551"
             app:layout_constraintLeft_toLeftOf="@+id/guideline5"
             app:layout_constraintRight_toLeftOf="@+id/guideline5"
-            app:layout_constraintTop_toTopOf="@+id/icon125" />
+            app:layout_constraintTop_toTopOf="@+id/icon_400" />
 
         <TextView
-            android:id="@+id/icon_400"
+            android:id="@+id/icon_600"
             android:layout_width="114dp"
             android:layout_height="81dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/icon_400_shadow"
             android:gravity="center"
-            android:text="400g"
+            android:text="600g"
             android:textColor="@color/colorWhite"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintHorizontal_bias="0.505"
             app:layout_constraintLeft_toLeftOf="@+id/guideline4"
             app:layout_constraintRight_toLeftOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/price_lable_400"
             tools:layout_constraintLeft_creator="1"
             tools:layout_constraintRight_creator="1" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/price_lable_600"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:text="$12 each"
-            app:layout_constraintBottom_toBottomOf="@+id/icon_400"
-            app:layout_constraintLeft_toLeftOf="@+id/icon_400"
-            app:layout_constraintRight_toRightOf="@+id/icon_400"
+            android:text="20"
+            app:layout_constraintBottom_toBottomOf="@+id/icon_600"
+            app:layout_constraintLeft_toLeftOf="@+id/icon_600"
+            app:layout_constraintRight_toRightOf="@+id/icon_600"
             tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1"
+            tools:text="$20 each" />
+
+        <EditText
+            android:id="@+id/edit_text_1000"
+            android:layout_width="79dp"
+            android:layout_height="55dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_horizontal"
+            android:inputType="number"
+            android:text="0"
+            app:layout_constraintBottom_toBottomOf="@+id/price_lable_1000"
+            app:layout_constraintHorizontal_bias="0.437"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline5"
+            app:layout_constraintRight_toLeftOf="@+id/guideline5"
+            app:layout_constraintTop_toTopOf="@+id/icon_1000"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
             tools:layout_constraintTop_creator="1" />
 
         <EditText
@@ -162,11 +179,12 @@
             android:layout_width="79dp"
             android:layout_height="55dp"
             android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
             android:gravity="center_horizontal"
             android:inputType="number"
             android:text="0"
-            app:layout_constraintBottom_toBottomOf="@+id/textView12"
-            app:layout_constraintHorizontal_bias="0.437"
+            app:layout_constraintBottom_toBottomOf="@+id/price_lable_600"
+            app:layout_constraintHorizontal_bias="0.551"
             app:layout_constraintLeft_toLeftOf="@+id/guideline5"
             app:layout_constraintRight_toLeftOf="@+id/guideline5"
             app:layout_constraintTop_toTopOf="@+id/icon_600"
@@ -174,58 +192,44 @@
             tools:layout_constraintRight_creator="1"
             tools:layout_constraintTop_creator="1" />
 
-        <EditText
-            android:id="@+id/edit_text_400"
-            android:layout_width="79dp"
-            android:layout_height="55dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginLeft="8dp"
-            android:gravity="center_horizontal"
-            android:inputType="number"
-            android:text="0"
-            app:layout_constraintBottom_toBottomOf="@+id/textView10"
-            app:layout_constraintHorizontal_bias="0.551"
-            app:layout_constraintLeft_toLeftOf="@+id/guideline5"
-            app:layout_constraintRight_toLeftOf="@+id/guideline5"
-            app:layout_constraintTop_toTopOf="@+id/icon_400"
-            tools:layout_constraintLeft_creator="1"
-            tools:layout_constraintRight_creator="1"
-            tools:layout_constraintTop_creator="1" />
-
         <TextView
-            android:id="@+id/icon_600"
+            android:id="@+id/icon_1000"
             android:layout_width="152dp"
             android:layout_height="111dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/icon_600_shadow"
             android:gravity="center"
-            android:text="600g"
+            android:text="1 kg"
             android:textColor="@color/colorWhite"
+            android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="@+id/guideline4"
-            app:layout_constraintRight_toLeftOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/price_lable_600" />
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/price_lable_1000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="$16 each"
-            app:layout_constraintBottom_toBottomOf="@+id/icon_600"
-            app:layout_constraintEnd_toEndOf="@+id/icon_600"
-            app:layout_constraintStart_toStartOf="@+id/icon_600"
+            android:text="$32 each"
+            app:layout_constraintBottom_toBottomOf="@+id/icon_1000"
+            app:layout_constraintEnd_toEndOf="@+id/icon_1000"
+            app:layout_constraintStart_toStartOf="@+id/icon_1000"
             tools:layout_constraintRight_creator="1"
-            tools:layout_constraintTop_creator="1" />
+            tools:layout_constraintTop_creator="1"
+            tools:text="$32 each" />
 
         <TextView
             android:id="@+id/subtotal_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="1dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:text="Subtotal: "
             app:layout_constraintRight_toLeftOf="@+id/guideline5"
-            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <TextView
             android:id="@+id/subtotal_price"
@@ -277,7 +281,7 @@
                 style="@android:style/Widget.CompoundButton.CheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="FREE -- delivery to Kerikeri CBD"
+                android:text="FREE -- delivery to Whanagarei CBD"
                 android:textSize="@dimen/radio_button_font_size" />
 
             <RadioButton
@@ -285,7 +289,7 @@
                 style="@android:style/Widget.CompoundButton.CheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Standard delivery, calculate below"
+                android:text="Standard delivery"
                 android:textSize="@dimen/radio_button_font_size" />
 
         </RadioGroup>
@@ -377,14 +381,6 @@
                 android:textSize="@dimen/std_deliver_text_size" />
 
             <RadioButton
-                android:id="@+id/std_delivery_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/radio_delivery_2"
-                android:textSize="@dimen/std_deliver_text_size" />
-
-            <RadioButton
                 android:id="@+id/std_delivry_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -423,6 +419,86 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/orderScreenLogo"
             tools:text="-- Space --" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Total Weight: "
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/price_lable_1000" />
+
+        <TextView
+            android:id="@+id/total_weight_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toTopOf="@+id/textView5"
+            tools:text="15kg" />
+
+        <FrameLayout
+            android:id="@+id/google_frame_layout"
+            android:layout_width="246dp"
+            android:layout_height="230dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/primary_95alpha"
+            android:fadingEdge="none|horizontal|vertical"
+            android:foregroundGravity="center"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/sign_in_text">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:alpha="1.0"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <com.google.android.gms.common.SignInButton
+                    android:id="@+id/google_sign_in_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:alpha="1.0"
+                    android:elevation="20dp">
+
+                </com.google.android.gms.common.SignInButton>
+
+                <TextView
+                    android:id="@+id/cancel_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:text="Cancel"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/sign_out_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="Sign Out"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_in_text" />
 
 
     </android.support.constraint.ConstraintLayout>
